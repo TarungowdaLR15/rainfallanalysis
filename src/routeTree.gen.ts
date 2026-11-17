@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AnalysisRouteImport } from './routes/analysis'
+import { Route as CorrelationRouteImport } from './routes/correlation'
+import { Route as HypothesisRouteImport } from './routes/hypothesis'
+import { Route as PredictionRouteImport } from './routes/prediction'
+import { Route as ProbabilityRouteImport } from './routes/probability'
+import { Route as SeasonalRouteImport } from './routes/seasonal'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnalysisRoute = AnalysisRouteImport.update({
+  id: '/analysis',
+  path: '/analysis',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CorrelationRoute = CorrelationRouteImport.update({
+  id: '/correlation',
+  path: '/correlation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HypothesisRoute = HypothesisRouteImport.update({
+  id: '/hypothesis',
+  path: '/hypothesis',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PredictionRoute = PredictionRouteImport.update({
+  id: '/prediction',
+  path: '/prediction',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProbabilityRoute = ProbabilityRouteImport.update({
+  id: '/probability',
+  path: '/probability',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SeasonalRoute = SeasonalRouteImport.update({
+  id: '/seasonal',
+  path: '/seasonal',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/analysis': typeof AnalysisRoute
+  '/correlation': typeof CorrelationRoute
+  '/hypothesis': typeof HypothesisRoute
+  '/prediction': typeof PredictionRoute
+  '/probability': typeof ProbabilityRoute
+  '/seasonal': typeof SeasonalRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/analysis': typeof AnalysisRoute
+  '/correlation': typeof CorrelationRoute
+  '/hypothesis': typeof HypothesisRoute
+  '/prediction': typeof PredictionRoute
+  '/probability': typeof ProbabilityRoute
+  '/seasonal': typeof SeasonalRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/analysis': typeof AnalysisRoute
+  '/correlation': typeof CorrelationRoute
+  '/hypothesis': typeof HypothesisRoute
+  '/prediction': typeof PredictionRoute
+  '/probability': typeof ProbabilityRoute
+  '/seasonal': typeof SeasonalRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/analysis'
+    | '/correlation'
+    | '/hypothesis'
+    | '/prediction'
+    | '/probability'
+    | '/seasonal'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/analysis'
+    | '/correlation'
+    | '/hypothesis'
+    | '/prediction'
+    | '/probability'
+    | '/seasonal'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/analysis'
+    | '/correlation'
+    | '/hypothesis'
+    | '/prediction'
+    | '/probability'
+    | '/seasonal'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AnalysisRoute: typeof AnalysisRoute
+  CorrelationRoute: typeof CorrelationRoute
+  HypothesisRoute: typeof HypothesisRoute
+  PredictionRoute: typeof PredictionRoute
+  ProbabilityRoute: typeof ProbabilityRoute
+  SeasonalRoute: typeof SeasonalRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +143,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analysis': {
+      id: '/analysis'
+      path: '/analysis'
+      fullPath: '/analysis'
+      preLoaderRoute: typeof AnalysisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/correlation': {
+      id: '/correlation'
+      path: '/correlation'
+      fullPath: '/correlation'
+      preLoaderRoute: typeof CorrelationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hypothesis': {
+      id: '/hypothesis'
+      path: '/hypothesis'
+      fullPath: '/hypothesis'
+      preLoaderRoute: typeof HypothesisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prediction': {
+      id: '/prediction'
+      path: '/prediction'
+      fullPath: '/prediction'
+      preLoaderRoute: typeof PredictionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/probability': {
+      id: '/probability'
+      path: '/probability'
+      fullPath: '/probability'
+      preLoaderRoute: typeof ProbabilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seasonal': {
+      id: '/seasonal'
+      path: '/seasonal'
+      fullPath: '/seasonal'
+      preLoaderRoute: typeof SeasonalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AnalysisRoute: AnalysisRoute,
+  CorrelationRoute: CorrelationRoute,
+  HypothesisRoute: HypothesisRoute,
+  PredictionRoute: PredictionRoute,
+  ProbabilityRoute: ProbabilityRoute,
+  SeasonalRoute: SeasonalRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

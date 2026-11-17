@@ -28,3 +28,5 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+The analytics interface uses dedicated file-based routes in `src/routes`, with a shared navigation shell and reusable page content in `src/components`; this keeps each analysis view directly addressable and the visual language consistent.
