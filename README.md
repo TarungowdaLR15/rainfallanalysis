@@ -33,7 +33,7 @@ Start the development server:
 
     npm run dev
 
-The app will be available at the local Vite URL, typically `http://localhost:5173`.
+The app will be available at the local Vite URL, typically `https://rainfallanalysis.lovable.app/`.
 
 Build for production:
 
