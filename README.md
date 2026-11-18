@@ -49,6 +49,20 @@ Lint the project:
 
     npm run lint
 
+## Dataset: Seasonal Rainfall Results
+
+The following table outlines the calculated seasonal rainfall statistics for Bengaluru, derived from the `Seasonal_Rainfall_Results.csv` dataset. These values serve as the foundation for the charts and metrics displayed in the Seasonal Analysis section.
+
+| Season | Total Rainfall (mm) | Mean Daily (mm/day) | Observations | Rainy Days |
+| :--- | :--- | :--- | :--- | :--- |
+| Winter | 491.6 | 0.5444 | 903 | 139 |
+| Pre-monsoon | 1846.8 | 2.0074 | 920 | 359 |
+| Southwest monsoon | 5675.9 | 4.6524 | 1220 | 1094 |
+| Post-monsoon | 2175.4 | 3.5662 | 610 | 379 |
+
+**Notes:**
+- **Winter** and **Southwest monsoon** mean daily values are provided as verified findings, aligning with the metrics shown in the UI (0.5444 mm/day and 4.6524 mm/day respectively).
+- The **Pre-monsoon** and **Post-monsoon** values are included in the dataset but are treated as illustrative samples in the application's charts to maintain consistency with the verified scope of the study.
 ## Application Structure & Views
 
 The application is divided into eight primary sections accessible via the left sidebar navigation. Each section corresponds to a specific image in the design reference.
